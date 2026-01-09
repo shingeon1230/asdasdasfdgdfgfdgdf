@@ -3,25 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>신건의 인터랙티브 포트폴리오</title>
+    <title>신건의 포트폴리오</title>
     <style>
-        /* 기본 스타일 */
+        /* CSS 디자인 */
         body { font-family: 'Malgun Gothic', sans-serif; margin: 20px; background-color: #f9f9f9; transition: background 0.5s; }
         header, footer { text-align: center; padding: 20px; background-color: #222; color: #fff; border-radius: 10px; margin-bottom: 20px; }
         section { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 20px; }
         h2 { color: #4da3ff; border-bottom: 2px solid #4da3ff; display: inline-block; }
-
-        /* 버튼 스타일 */
-        button { padding: 10px 15px; cursor: pointer; border: none; border-radius: 5px; background: #4da3ff; color: white; margin: 5px; transition: 0.3s; }
-        button:hover { background: #357abd; }
-
-        /* 로그인 & 댓글 창 스타일 */
-        input { padding: 10px; border: 1px solid #ddd; border-radius: 5px; width: 200px; }
-        #comment-list { list-style: none; padding: 0; margin-top: 15px; }
-        #comment-list li { background: #f1f1f1; padding: 10px; border-bottom: 1px solid #ddd; margin-bottom: 5px; border-radius: 5px; }
-        
+        button { padding: 10px 15px; cursor: pointer; border: none; border-radius: 5px; background: #4da3ff; color: white; margin: 5px; }
+        input { padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
         .hidden { display: none; }
-        #user-info { font-weight: bold; color: #4da3ff; }
+        #comment-list li { background: #f1f1f1; padding: 10px; margin-top: 5px; border-radius: 5px; list-style: none; display: flex; justify-content: space-between; }
     </style>
 </head>
 <body>
@@ -29,90 +21,39 @@
     <header>
         <h1 id="main-title">SHIN GUN : PORTFOLIO</h1>
         <div id="login-area">
-            <input type="text" id="username" placeholder="이름을 입력하세요">
+            <input type="text" id="username" placeholder="이름 입력">
             <button onclick="login()">로그인</button>
         </div>
         <div id="welcome-area" class="hidden">
-            <span id="user-info"></span>님, 환영합니다! 
+            <span id="user-info"></span>님 환영합니다! 
             <button onclick="logout()">로그아웃</button>
         </div>
     </header>
 
     <main>
         <section>
-            <h2>✨ 인터랙티브 기능</h2>
-            <p>아래 버튼을 눌러 자바스크립트 기능을 확인해보세요.</p>
-            <button onclick="showAlert()">인사하기</button>
+            <h2>✨ 기능 테스트</h2>
+            <button onclick="showAlert()">인사 알림</button>
             <button onclick="changeBgColor()">배경색 변경</button>
+        </section>
+
+        <section id="section1">
+            <h2>About Me</h2>
+            <p>안녕하세요, <strong>신건</strong>입니다. 웹 개발자를 꿈꾸고 있습니다.</p>
         </section>
 
         <section>
             <h2>💬 방명록</h2>
-            <div>
-                <input type="text" id="comment-input" placeholder="신건 님에게 한마디!">
-                <button onclick="addComment()">등록</button>
-            </div>
-            <ul id="comment-list">
-                </ul>
+            <input type="text" id="comment-input" placeholder="한마디 남겨주세요">
+            <button onclick="addComment()">등록</button>
+            <ul id="comment-list"></ul>
         </section>
     </main>
-
-    <script>
-        // 1. 알림 표시 기능
-        function showAlert() {
-            alert("안녕하세요! 신건의 포트폴리오에 오신 것을 환영합니다.");
-        }
-
-        // 2. 배경색 변경 기능
-        function changeBgColor() {
-            const colors = ['#f9f9f9', '#dfe6e9', '#ffeaa7', '#fab1a0', '#dff9fb'];
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            document.body.style.backgroundColor = randomColor;
-        }
-
-        // 3. 간단한 로그인 시스템
-        function login() {
-            const name = document.getElementById('username').value;
-            if (name.trim() === "") {
-                alert("이름을 입력해주세요!");
-                return;
-            }
-            document.getElementById('user-info').innerText = name;
-            document.getElementById('login-area').classList.add('hidden');
-            document.getElementById('welcome-area').classList.remove('hidden');
-        }
-
-        function logout() {
-            document.getElementById('login-area').classList.remove('hidden');
-            document.getElementById('welcome-area').classList.add('hidden');
-            document.getElementById('username').value = "";
-        }
-
-        // 4. 댓글 작성 및 목록 표시
-        function addComment() {
-            const input = document.getElementById('comment-input');
-            const list = document.getElementById('comment-list');
-
-            if (input.value.trim() === "") {
-                alert("내용을 입력해주세요.");
-                return;
-            }
-
-            // 새로운 리스트 아이템(li) 생성
-            const li = document.createElement('li');
-            li.textContent = input.value;
-            
-            // 목록에 추가
-            list.appendChild(li);
-            
-            // 입력창 비우기
-            input.value = "";
-        }
-    </script>
 
     <footer>
         <p>&copy; 2026 SHIN GUN. All rights reserved.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
