@@ -1,59 +1,48 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>신건의 포트폴리오</title>
-    <style>
-        /* CSS 디자인 */
-        body { font-family: 'Malgun Gothic', sans-serif; margin: 20px; background-color: #f9f9f9; transition: background 0.5s; }
-        header, footer { text-align: center; padding: 20px; background-color: #222; color: #fff; border-radius: 10px; margin-bottom: 20px; }
-        section { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 20px; }
-        h2 { color: #4da3ff; border-bottom: 2px solid #4da3ff; display: inline-block; }
-        button { padding: 10px 15px; cursor: pointer; border: none; border-radius: 5px; background: #4da3ff; color: white; margin: 5px; }
-        input { padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
-        .hidden { display: none; }
-        #comment-list li { background: #f1f1f1; padding: 10px; margin-top: 5px; border-radius: 5px; list-style: none; display: flex; justify-content: space-between; }
-    </style>
-</head>
-<body>
+<main>
+    <section id="section1">
+        <h2>📌 안녕하세요, 신건입니다.</h2>
+        <p class="highlight">"단순한 코딩을 넘어 사용자의 경험을 디자인합니다."</p>
+        <p>
+            저는 문제 해결 과정에서 느끼는 즐거움을 원동력으로 삼는 개발자 지망생입니다.<br>
+            복잡한 로직을 깔끔한 코드로 구현하는 것을 좋아하며, 
+            최근에는 **JavaScript를 활용한 인터랙티브 웹 디자인**에 큰 매력을 느끼고 있습니다.
+        </p>
+        <div id="unique-box">💡 끈기 있게 끝까지 파고드는 성격이 저의 가장 큰 장점입니다.</div>
+    </section>
 
-    <header>
-        <h1 id="main-title">SHIN GUN : PORTFOLIO</h1>
-        <div id="login-area">
-            <input type="text" id="username" placeholder="이름 입력">
-            <button onclick="login()">로그인</button>
+    <section id="skills">
+        <h2>🚀 My Skills</h2>
+        <div class="parent">
+            <p>Frontend Development</p>
+            <div class="child">
+                <p>✔ <strong>HTML5 & CSS3</strong>: 시맨틱 태그를 활용한 표준 레이아웃 설계</p>
+                <p>✔ <strong>JavaScript</strong>: DOM 조작 및 동적 이벤트 처리 가능</p>
+                <p>✔ <strong>Responsive Design</strong>: 모바일과 PC 모두 대응하는 반응형 웹</p>
+            </div>
         </div>
-        <div id="welcome-area" class="hidden">
-            <span id="user-info"></span>님 환영합니다! 
-            <button onclick="logout()">로그아웃</button>
+    </section>
+
+    <section id="projects">
+        <h2>🏆 Projects & Experience</h2>
+        <div class="parent">
+            <p>개인 포트폴리오 웹사이트 제작 (2025)</p>
+            <div class="child">
+                <p>- 직접 기획부터 HTML/CSS 설계, JS 기능 구현까지 총괄</p>
+                <p>- 로그인 시스템 및 동적 댓글 기능 구현 완료</p>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <main>
-        <section>
-            <h2>✨ 기능 테스트</h2>
-            <button onclick="showAlert()">인사 알림</button>
-            <button onclick="changeBgColor()">배경색 변경</button>
-        </section>
+    <section>
+        <h2>✨ 기능 테스트</h2>
+        <button onclick="showAlert()">인사 알림</button>
+        <button onclick="changeBgColor()">배경색 변경</button>
+    </section>
 
-        <section id="section1">
-            <h2>About Me</h2>
-            <p>안녕하세요, <strong>신건</strong>입니다. 웹 개발자를 꿈꾸고 있습니다.</p>
-        </section>
-
-        <section>
-            <h2>💬 방명록</h2>
-            <input type="text" id="comment-input" placeholder="한마디 남겨주세요">
-            <button onclick="addComment()">등록</button>
-            <ul id="comment-list"></ul>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 SHIN GUN. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    <section>
+        <h2>💬 방명록</h2>
+        <input type="text" id="comment-input" placeholder="신건 님에게 응원의 한마디!">
+        <button onclick="addComment()">등록</button>
+        <ul id="comment-list"></ul>
+    </section>
+</main>
